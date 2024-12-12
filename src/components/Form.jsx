@@ -2,17 +2,8 @@ import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import Sidebar from "./Sidebar";
 
-// const initialForm = [
-//   // {
-//   //   firstName: "",
-//   //   lastName: "",
-//   //   email: "",
-//   //   studentId: "",
-//   //   year: "",
-//   //   className: "",
-//   // },
-// ];
 function Form() {
   const [form, setForm] = useState([]);
   const [student, setStudent] = useState({});
@@ -39,27 +30,29 @@ function Form() {
       return toast.error("Please enter a valid Class Name!");
     console.log(student);
     setForm((prevForm) => [...prevForm, student]);
-    console.log(form);
+    setStudent({});
   };
-  return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        {form.map((student) => (
-          <div key={student.studentId}>
-            <Card form={form} />
-          </div>
-        ))}
-      </div>
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
 
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+      }}
+    >
       <form
         style={{
           display: "flex",
           flexDirection: "column",
           width: "381px",
-          margin: "40px",
+          height: "fit-content",
           backgroundColor: "#fff",
           boxShadow: "0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
-          borderRadius: "8px",
+          borderRadius: "15px",
           padding: "30px",
         }}
         onChange={changeHandler}
@@ -84,8 +77,22 @@ function Form() {
           <option name="art">Art</option>
           <option name="geography">Geography</option>
         </select>
-        <button type="submit">Creat</button>
+        <button type="submit">Create</button>
       </form>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {form.map((student) => (
+          <div key={student.studentId}>
+            <Card
+              student={student}
+              form={form}
+              setForm={setForm}
+              changeHandler={changeHandler}
+              submitHandler={submitHandler}
+            />
+          </div>
+        ))}
+      </div>
+      <Sidebar />
     </div>
   );
 }

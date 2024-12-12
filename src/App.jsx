@@ -5,13 +5,10 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <div style={{ width: "80%" }}>
-        <Toaster />
-        <Title />
-        <Form />
-      </div>
-      <Sidebar />
+    <div>
+      <Toaster />
+      <Title />
+      <Form />
     </div>
   );
 }

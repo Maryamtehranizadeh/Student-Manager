@@ -71,9 +71,6 @@ function Sidebar() {
   return (
     <div
       style={{
-        marginRight: "50px",
-        marginTop: "120px",
-        width: "25%",
         backgroundColor: "#fff",
         boxShadow: "0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         borderRadius: "15px",
@@ -148,7 +145,7 @@ function Sidebar() {
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             }}
           >
-            <p>Are you sure you want to delete {classToDelete}?</p>
+            <h4>Are you sure you want to delete {classToDelete}?</h4>
             <div>
               <button
                 onClick={deleteHandler}
@@ -187,6 +184,7 @@ function Sidebar() {
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             }}
           >
+            <h4>Please Enter a new class!</h4>
             <input
               type="text"
               placeholder="Class Name"
@@ -230,6 +228,7 @@ function Sidebar() {
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             }}
           >
+            <h4>Please Edit the class!</h4>
             <input
               type="text"
               placeholder="Correct Class Name"
