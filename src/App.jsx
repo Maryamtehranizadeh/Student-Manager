@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <Toaster />
-      <Title />
       <Manager />
     </div>
   );

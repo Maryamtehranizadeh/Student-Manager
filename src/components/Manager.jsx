@@ -4,6 +4,7 @@ import Card from "./Card";
 import Sidebar from "./Sidebar";
 import styles from "./Manager.module.css";
 import Form from "./Form";
+import Title from "./Title";
 
 const firstStudents = [
   {
@@ -23,12 +24,12 @@ const firstStudents = [
     year: "2",
   },
   {
-    className: "Art",
-    firstName: "Andrew",
-    lastName: "Nash",
-    email: "andrew@Nash.com",
-    studentId: "333333",
-    year: "3",
+    className: "Grammer",
+    firstName: "Rayan",
+    lastName: "Green",
+    email: "rayan@green.com",
+    studentId: "444444",
+    year: "4",
   },
 ];
 
@@ -66,6 +67,7 @@ function Manager() {
     console.log(student);
     setForm((prevForm) => [...prevForm, student]);
     setStudent({});
+    closeModal();
   };
   useEffect(() => {
     console.log(form);
@@ -73,9 +75,13 @@ function Manager() {
 
   return (
     <div className={styles.main}>
-      <h3>
-        <button onClick={openModal}>Add New Students Here</button>
-      </h3>
+      <div>
+        <Title />
+        <h3>
+          <button onClick={openModal}>Add New Students Here</button>
+        </h3>
+      </div>
+
       {formModal && (
         <div className={styles.backmodal}>
           <div className={styles.modal}>
@@ -90,13 +96,7 @@ function Manager() {
       <div style={{ display: "flex", flexDirection: "column" }}>
         {form.map((student) => (
           <div key={student.studentId}>
-            <Card
-              student={student}
-              form={form}
-              setForm={setForm}
-              changeHandler={changeHandler}
-              submitHandler={submitHandler}
-            />
+            <Card student={student} form={form} setForm={setForm} />
           </div>
         ))}
       </div>

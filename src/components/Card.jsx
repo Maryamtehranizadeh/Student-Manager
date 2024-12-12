@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Card.module.css";
+import Form from "./Form";
 
 function Card({ student, form, setForm }) {
   const [deleteModal, setDeleteModal] = useState(false);
@@ -33,12 +34,12 @@ function Card({ student, form, setForm }) {
     setEditModal(true);
   };
 
-  const handleInputChange = (e) => {
+  const changeHandler = (e) => {
     const { name, value } = e.target;
     setEditForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
-  const editStudentHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     setForm((prevForm) =>
       prevForm.map((student) =>
@@ -102,38 +103,11 @@ function Card({ student, form, setForm }) {
       {editModal && (
         <div className={styles.backmodal}>
           <div className={styles.modal}>
-            <form
-              className={styles.modalform}
-              onChange={handleInputChange}
-              onSubmit={editStudentHandler}
-            >
-              <h4>Please edit the student information</h4>
-              <input type="text" placeholder="First Name" name="firstName" />
-              <input type="text" placeholder="Last Name" name="lastName" />
-              <input type="email" placeholder="Email" name="email" />
-              <input
-                type="number"
-                placeholder="Student ID"
-                max="999999"
-                name="studentId"
-              />
-              <input type="number" placeholder="Year" max="99" name="year" />
-              <select name="className" id="className">
-                <option value="none">Class Name</option>
-                <option name="mathematics">Mathematics</option>
-                <option name="science">Science</option>
-                <option name="history">History</option>
-                <option name="grammer">Grammer</option>
-                <option name="art">Art</option>
-                <option name="geography">Geography</option>
-              </select>
-              <div>
-                <button style={{ marginRight: "10px" }} type="submit">
-                  Create / Edit
-                </button>
-                <button onClick={closeModal}>Cancel</button>
-              </div>
-            </form>
+            <Form
+              changeHandler={changeHandler}
+              submitHandler={submitHandler}
+              closeModal={closeModal}
+            />
           </div>
         </div>
       )}
