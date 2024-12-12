@@ -52,7 +52,7 @@ function Card({ student, form, setForm, changeHandler, submitHandler }) {
   };
 
   return (
-    <div>
+    <div style={{ margin: "10px" }}>
       <div
         style={{
           width: "425px",
@@ -197,7 +197,7 @@ function Card({ student, form, setForm, changeHandler, submitHandler }) {
                 <button style={{ marginRight: "10px" }} type="submit">
                   Edit
                 </button>
-                <button>Delete</button>
+                <button onClick={closeModal}>Cancel</button>
               </div>
             </form>
           </div>

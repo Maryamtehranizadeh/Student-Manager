@@ -42,6 +42,7 @@ function Form() {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
+        alignItems: "start",
       }}
     >
       <form
@@ -53,7 +54,8 @@ function Form() {
           backgroundColor: "#fff",
           boxShadow: "0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
           borderRadius: "15px",
-          padding: "30px",
+          padding: "60px",
+          fontSize: "1rem",
         }}
         onChange={changeHandler}
         onSubmit={submitHandler}

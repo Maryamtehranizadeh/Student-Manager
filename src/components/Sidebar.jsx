@@ -77,7 +77,7 @@ function Sidebar() {
         padding: "60px",
         height: "fit-content",
         color: "grey",
-        font: "0.8rem",
+        fontSize: "1rem",
       }}
     >
       <table
