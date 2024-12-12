@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 381px;
+  height: fit-content;
+  background-color: #fff;
+  box-shadow: 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  padding: 60px;
+  font-size: 1rem;
+}

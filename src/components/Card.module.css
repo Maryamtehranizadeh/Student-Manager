@@ -1,27 +1,14 @@
-.container {
+.card {
+  width: 425px;
+  height: 161px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   box-shadow: 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   border-radius: 15px;
-  padding: 60px;
-  height: fit-content;
-  color: grey;
-  font-size: 1rem;
-}
-
-th {
-  padding-bottom: 20px;
-  padding-left: 0;
-  color: #213547;
-}
-
-tr {
-  border-bottom: 1px solid silver;
-}
-td {
-  padding: 30px 10px 10px 10px;
-}
-h4 {
-  color: #213547;
+  padding: 0 20px;
 }
 
 .backmodal {
@@ -43,4 +30,15 @@ h4 {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modalform {
+  display: flex;
+  flex-direction: column;
+  width: 381px;
+  height: fit-content;
+  background-color: #fff;
+  box-shadow: 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  padding: 30px;
 }

@@ -69,17 +69,7 @@ function Sidebar() {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#fff",
-        boxShadow: "0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
-        borderRadius: "15px",
-        padding: "60px",
-        height: "fit-content",
-        color: "grey",
-        fontSize: "1rem",
-      }}
-    >
+    <div className={styles.container}>
       <table
         style={{
           width: "100%",
@@ -122,29 +112,8 @@ function Sidebar() {
       </button>
 
       {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#fff",
-              padding: "20px",
-              borderRadius: "10px",
-              textAlign: "center",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-            }}
-          >
+        <div className={styles.backmodal}>
+          <div className={styles.modal}>
             <h4>Are you sure you want to delete {classToDelete}?</h4>
             <div>
               <button
@@ -161,29 +130,8 @@ function Sidebar() {
         </div>
       )}
       {inputModal && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#fff",
-              padding: "20px",
-              borderRadius: "10px",
-              textAlign: "center",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-            }}
-          >
+        <div className={styles.backmodal}>
+          <div className={styles.modal}>
             <h4>Please Enter a new class!</h4>
             <input
               type="text"
@@ -205,29 +153,8 @@ function Sidebar() {
       )}
 
       {editModal && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#fff",
-              padding: "20px",
-              borderRadius: "10px",
-              textAlign: "center",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-            }}
-          >
+        <div className={styles.backmodal}>
+          <div className={styles.modal}>
             <h4>Please Edit the class!</h4>
             <input
               type="text"

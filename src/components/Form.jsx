@@ -1,8 +1,8 @@
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import axios from "axios";
 import Sidebar from "./Sidebar";
+import styles from "./Form.module.css";
 
 function Form() {
   const [form, setForm] = useState([]);
@@ -37,26 +37,9 @@ function Form() {
   }, [form]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "start",
-      }}
-    >
+    <div className={styles.main}>
       <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "381px",
-          height: "fit-content",
-          backgroundColor: "#fff",
-          boxShadow: "0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
-          borderRadius: "15px",
-          padding: "60px",
-          fontSize: "1rem",
-        }}
+        className={styles.form}
         onChange={changeHandler}
         onSubmit={submitHandler}
       >
