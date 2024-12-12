@@ -1,8 +1,8 @@
 .main {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: start;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* align-items: start; */
   margin: 30px;
 }
 
@@ -37,4 +37,42 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* margin-left: 0; */
+}
+.title {
+  margin: 10px auto 40px;
+}
+.twins {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1060px) {
+  .main {
+    margin: 20px;
+  }
+  .twins {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .cards {
+    margin: auto;
+    width: 100%;
+    align-items: center;
+  }
+  .title {
+    margin: auto;
+  }
 }

@@ -60,22 +60,17 @@ function Sidebar() {
   const editCourseHandler = () => {
     if (!newCourse) return toast.error("Please enter the edited Class name!");
     setClasses((prevClasses) =>
-      prevClasses.filter((course) => course !== classToDelete)
+      prevClasses.map((course) =>
+        course === classToDelete ? newCourse : course
+      )
     );
-    setClassToDelete(null);
-    setClasses((prevClasses) => [...prevClasses, newCourse]);
     setNewCourse("");
     setEditModal(false);
   };
 
   return (
     <div className={styles.container}>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-        }}
-      >
+      <table>
         <thead>
           <tr>
             <th>Class Name</th>
@@ -85,12 +80,12 @@ function Sidebar() {
         <tbody>
           {classes.map((course) => (
             <tr key={course}>
-              <td>{course}</td>
+              <td style={{ marginRight: "60px" }}>{course}</td>
               <td>
                 <img
                   src="/edit.png"
                   alt="Edit"
-                  style={{ cursor: "pointer", marginRight: "10px" }}
+                  style={{ cursor: "pointer", marginRight: "30px" }}
                   onClick={() => editHandler(course)}
                 />
                 <img
@@ -105,7 +100,7 @@ function Sidebar() {
         </tbody>
       </table>
       <button
-        style={{ width: "100%", marginTop: "15px" }}
+        style={{ width: "100%", marginTop: "15px", marginTop: "30px" }}
         onClick={createHandler}
       >
         Create New Class
@@ -155,7 +150,7 @@ function Sidebar() {
       {editModal && (
         <div className={styles.backmodal}>
           <div className={styles.modal}>
-            <h4>Please edit the class!</h4>
+            <h4>Please edit the class {classToDelete}!</h4>
             <input
               type="text"
               placeholder="Correct Class Name"

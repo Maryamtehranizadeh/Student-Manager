@@ -75,7 +75,7 @@ function Manager() {
 
   return (
     <div className={styles.main}>
-      <div>
+      <div className={styles.title}>
         <Title />
         <h3>
           <button onClick={openModal}>Add New Students Here</button>
@@ -93,14 +93,16 @@ function Manager() {
           </div>
         </div>
       )}
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {form.map((student) => (
-          <div key={student.studentId}>
-            <Card student={student} form={form} setForm={setForm} />
-          </div>
-        ))}
+      <div className={styles.twins}>
+        <div className={styles.cards}>
+          {form.map((student) => (
+            <div key={student.studentId}>
+              <Card student={student} form={form} setForm={setForm} />
+            </div>
+          ))}
+        </div>
+        <Sidebar />
       </div>
-      <Sidebar />
     </div>
   );
 }
