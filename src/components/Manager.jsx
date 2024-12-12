@@ -5,15 +5,49 @@ import Sidebar from "./Sidebar";
 import styles from "./Manager.module.css";
 import Form from "./Form";
 
+const firstStudents = [
+  {
+    className: "Mathematics",
+    firstName: "Alex",
+    lastName: "Smith",
+    email: "alex@smith.com",
+    studentId: "111111",
+    year: "1",
+  },
+  {
+    className: "Geography",
+    firstName: "Bob",
+    lastName: "Doe",
+    email: "Bob@Doe.com",
+    studentId: "222222",
+    year: "2",
+  },
+  {
+    className: "Art",
+    firstName: "Andrew",
+    lastName: "Nash",
+    email: "andrew@Nash.com",
+    studentId: "333333",
+    year: "3",
+  },
+];
+
 function Manager() {
-  const [form, setForm] = useState([]);
+  const [form, setForm] = useState(firstStudents);
   const [student, setStudent] = useState({});
+  const [formModal, setFormModal] = useState(false);
 
   const changeHandler = (e) => {
     setStudent((prevStudent) => ({
       ...prevStudent,
       [e.target.name]: e.target.value,
     }));
+  };
+  const openModal = () => {
+    setFormModal(true);
+  };
+  const closeModal = () => {
+    setFormModal(false);
   };
 
   const submitHandler = (e) => {
@@ -39,14 +73,20 @@ function Manager() {
 
   return (
     <div className={styles.main}>
-      <Form
-        changeHandler={changeHandler}
-        submitHandler={submitHandler}
-        form={form}
-        setForm={setForm}
-        student={student}
-        setStudent={setStudent}
-      />
+      <h3>
+        <button onClick={openModal}>Add New Students Here</button>
+      </h3>
+      {formModal && (
+        <div className={styles.backmodal}>
+          <div className={styles.modal}>
+            <Form
+              changeHandler={changeHandler}
+              submitHandler={submitHandler}
+              closeModal={closeModal}
+            />
+          </div>
+        </div>
+      )}
       <div style={{ display: "flex", flexDirection: "column" }}>
         {form.map((student) => (
           <div key={student.studentId}>

@@ -129,7 +129,7 @@ function Card({ student, form, setForm }) {
               </select>
               <div>
                 <button style={{ marginRight: "10px" }} type="submit">
-                  Edit
+                  Create / Edit
                 </button>
                 <button onClick={closeModal}>Cancel</button>
               </div>

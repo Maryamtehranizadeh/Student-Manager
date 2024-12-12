@@ -1,13 +1,6 @@
 import styles from "./Form.module.css";
 
-function Form({
-  changeHandler,
-  submitHandler,
-  form,
-  setForm,
-  student,
-  setStudent,
-}) {
+function Form({ changeHandler, submitHandler, closeModal }) {
   return (
     <form
       className={styles.form}
@@ -33,7 +26,12 @@ function Form({
         <option name="art">Art</option>
         <option name="geography">Geography</option>
       </select>
-      <button type="submit">Create</button>
+      <div>
+        <button style={{ marginRight: "10px" }} type="submit">
+          Create / Edit
+        </button>
+        <button onClick={closeModal}>Cancel</button>
+      </div>
     </form>
   );
 }
