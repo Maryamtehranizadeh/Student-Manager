@@ -155,7 +155,7 @@ function Sidebar() {
       {editModal && (
         <div className={styles.backmodal}>
           <div className={styles.modal}>
-            <h4>Please Edit the class!</h4>
+            <h4>Please edit the class!</h4>
             <input
               type="text"
               placeholder="Correct Class Name"
