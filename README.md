@@ -25,7 +25,6 @@ This project is containerized and can be run using Docker. Follow the steps belo
 ## Run the Docker container:
 
 ```bash
-Copy code
 docker run -d -p 80:80 maryamtehranizadeh/education-project:latest
 ```
 
@@ -34,7 +33,6 @@ The application will now be running on port 80. You can access it via http://loc
 For example, to proxy to port 8080:
 
 ```bash
-Copy code
 docker run -d -p 8080:80 maryamtehranizadeh/education-project:latest
 ```
 
@@ -47,7 +45,7 @@ http://localhost:<your-port> if using a custom port.
 
 ## Screenshot
 
-Below is a screenshot of the application interface:
+![Student Manager](./image.png)
 
 ## Technical Details
 
