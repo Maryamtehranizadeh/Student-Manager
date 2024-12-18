@@ -107,6 +107,7 @@ function Card({ student, form, setForm }) {
               changeHandler={changeHandler}
               submitHandler={submitHandler}
               closeModal={closeModal}
+              student={editForm} //passing the prefilled inputs to the form
             />
           </div>
         </div>

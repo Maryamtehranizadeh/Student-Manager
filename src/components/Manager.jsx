@@ -8,28 +8,28 @@ import Title from "./Title";
 
 const firstStudents = [
   {
-    className: "Mathematics",
     firstName: "Alex",
     lastName: "Smith",
     email: "alex@smith.com",
     studentId: "111111",
     year: "1",
+    className: "Mathematics",
   },
   {
-    className: "Geography",
     firstName: "Bob",
     lastName: "Doe",
     email: "Bob@Doe.com",
     studentId: "222222",
     year: "2",
+    className: "Geography",
   },
   {
-    className: "Grammer",
     firstName: "Rayan",
     lastName: "Green",
     email: "rayan@green.com",
     studentId: "444444",
     year: "4",
+    className: "Grammer",
   },
 ];
 
@@ -89,6 +89,7 @@ function Manager() {
               changeHandler={changeHandler}
               submitHandler={submitHandler}
               closeModal={closeModal}
+              student={student}
             />
           </div>
         </div>
